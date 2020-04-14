@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "94111693896",
+    "firebase_url": "https://randomusersproject.firebaseio.com",
+    "project_id": "randomusersproject",
+    "storage_bucket": "randomusersproject.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94111693896:android:3d21404abceb333aed6c7d",
+        "android_client_info": {
+          "package_name": "com.levon.randomusersproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94111693896-p9sa8aadmasiofv5n807oovl4l4uk3ie.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDz4OaJksBi5yzt5YVxNK6ez6wKsfyqUkI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "94111693896-p9sa8aadmasiofv5n807oovl4l4uk3ie.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
