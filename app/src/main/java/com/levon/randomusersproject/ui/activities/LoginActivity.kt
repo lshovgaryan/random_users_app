@@ -6,7 +6,6 @@ import android.view.View.OnFocusChangeListener
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.levon.randomusersproject.R
 import com.levon.randomusersproject.callbacks.LoginCallbacks
@@ -19,10 +18,11 @@ class LoginActivity : AppCompatActivity(), LoginCallbacks {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val activityLoginBinding: ActivityLoginBinding = DataBindingUtil.
-            setContentView(this, R.layout.activity_login)
-        activityLoginBinding.viewModel = ViewModelProviders
+            setContentView(this, R.layout.activity_login)//es mek
+        var viewModel = ViewModelProviders
             .of(this, LoginViewModelFactory(this))
-            .get(LoginViewModel::class.java)
+            .get(LoginViewModel::class.java)//es erku tox
+        activityLoginBinding.viewModel = viewModel//es errord tox
     }
 
     override fun onLoginSuccess() {
@@ -42,8 +42,8 @@ class LoginActivity : AppCompatActivity(), LoginCallbacks {
     }
 
     override fun onFocusChanged(): OnFocusChangeListener {
-        return OnFocusChangeListener { v, _ ->
-            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        return OnFocusChangeListener { v, _ ->//6-rd
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager//chorrord
             imm.hideSoftInputFromWindow(v.windowToken, 0)
         }
     }

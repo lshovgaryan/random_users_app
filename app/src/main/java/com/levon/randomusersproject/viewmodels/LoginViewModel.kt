@@ -4,12 +4,16 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.view.View.OnFocusChangeListener
+import androidx.databinding.ObservableField
 import androidx.lifecycle.ViewModel
 import com.levon.randomusersproject.callbacks.LoginCallbacks
-import com.levon.randomusersproject.models.LoginModel
+import com.levon.randomusersproject.data.models.LoginModel
 
 class LoginViewModel(private var loginCallbacks: LoginCallbacks): ViewModel() {
-    var loginModel: LoginModel = LoginModel(null, null)
+    var loginModel: LoginModel =
+        LoginModel(null, null)
+
+    var isSignInStage: ObservableField<Boolean> = ObservableField(true)
 
     fun groupNameTextWatcher(): TextWatcher? {
         return object : TextWatcher {
@@ -73,5 +77,9 @@ class LoginViewModel(private var loginCallbacks: LoginCallbacks): ViewModel() {
 
     fun onFocusChangedFromInput(): OnFocusChangeListener? {
         return loginCallbacks.onFocusChanged()
+    }
+
+    fun changeStage(view: View?) {
+        isSignInStage.set(!(isSignInStage.get() as Boolean))
     }
 }

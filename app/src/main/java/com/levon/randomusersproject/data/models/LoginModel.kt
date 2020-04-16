@@ -1,9 +1,9 @@
-package com.levon.randomusersproject.models
+package com.levon.randomusersproject.data.models
 
 class LoginModel(var username: String?, var password: String?) {
 
     fun isValidGroupName(): Boolean {
-        return username?.length!! > 3
+        return (username ?: "").length > 3
     }
 
     fun isValidPassword(): Boolean {
