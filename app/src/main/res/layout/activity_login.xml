@@ -46,8 +46,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:inputType="textEmailAddress"
                     app:onFocusChanged="@{viewModel.onFocusChangedFromInput}"
-                    app:textChangedListener="@{viewModel.groupNameTextWatcher}" />
+                    app:textChangedListener="@{viewModel.emailTextWatcher}" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -75,6 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:enabled="@{viewModel.isLoginButtonEnabled}"
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginBottom="8dp"
@@ -86,6 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:enabled="@{viewModel.isLoginButtonEnabled}"
                 android:background="@android:color/transparent"
                 android:onClick="@{viewModel.changeStage}"
                 android:text="@string/create_new_account"
@@ -120,8 +123,9 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:inputType="textEmailAddress"
                     app:onFocusChanged="@{viewModel.onFocusChangedFromInput}"
-                    app:textChangedListener="@{viewModel.groupNameTextWatcher}" />
+                    app:textChangedListener="@{viewModel.emailTextWatcher}" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -161,7 +165,7 @@
                     android:layout_height="match_parent"
                     android:inputType="textPassword"
                     app:onFocusChanged="@{viewModel.onFocusChangedFromInput}"
-                    app:textChangedListener="@{viewModel.passwordTextWatcher}" />
+                    app:textChangedListener="@{viewModel.confirmPasswordTextWatcher}" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
@@ -172,6 +176,7 @@
                 android:layout_marginStart="50dp"
                 android:layout_marginEnd="50dp"
                 android:layout_marginBottom="8dp"
+                android:enabled="@{viewModel.isRegisterButtonEnabled}"
                 android:onClick="@{viewModel::onLoginButtonClicked}"
                 android:text="@string/sign_up"
                 android:textColor="@color/white" />
@@ -181,6 +186,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@android:color/transparent"
+                android:enabled="@{viewModel.isRegisterButtonEnabled}"
                 android:onClick="@{viewModel.changeStage}"
                 android:text="@string/sign_in_to_your_account"
                 android:textAllCaps="false"

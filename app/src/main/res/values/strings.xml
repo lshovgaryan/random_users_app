@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">RandomUsersProject</string>
+    <string name="app_name">Random Users</string>
     <string name="sign_in">Sign in</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
@@ -7,4 +7,5 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_in_to_your_account">Sign In To Your Account</string>
+    <string name="log_out">Log Out</string>
 </resources>

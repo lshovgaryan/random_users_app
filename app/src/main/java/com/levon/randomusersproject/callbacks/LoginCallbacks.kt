@@ -4,8 +4,8 @@ import android.view.View
 
 interface LoginCallbacks {
     fun onLoginSuccess()
-    fun onLoginFailure()
+    fun onLoginFailure(message: String)
     fun onRegisterSuccess()
-    fun onRegisterFailure()
+    fun onRegisterFailure(message: String)
     fun onFocusChanged(): View.OnFocusChangeListener
 }
