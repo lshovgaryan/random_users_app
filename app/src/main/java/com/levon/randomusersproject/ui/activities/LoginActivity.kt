@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity(), LoginCallbacks {
         super.onCreate(savedInstanceState)
         val activityLoginBinding: ActivityLoginBinding = DataBindingUtil.
             setContentView(this, R.layout.activity_login)
-        var viewModel = ViewModelProviders
+        val viewModel = ViewModelProviders
             .of(this, LoginViewModelFactory(this))
             .get(LoginViewModel::class.java)
         activityLoginBinding.viewModel = viewModel
